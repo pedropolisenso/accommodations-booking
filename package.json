@@ -1,0 +1,56 @@
+{
+  "name": "booking-accommodations",
+  "version": "1.0.0",
+  "description": "platform of marketplace for booking accommodations",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node app.js",
+    "build": "webpack",
+    "config": "./config.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/uniplaces/Challenges.git"
+  },
+  "author": "pedro polisenso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uniplaces/Challenges/issues"
+  },
+  "homepage": "https://github.com/uniplaces/Challenges#readme",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express-es6-template-engine": "^2.1.7",
+    "method-override": "^3.0.0",
+    "mongojs": "^2.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "express": "^4.15.2",
+    "node-sass": "^4.11.0",
+    "react-icons": "^2.2.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.0",
+    "jest": "^24.1.0"
+  }
+}
