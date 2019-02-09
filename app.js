@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 });
 
 // Server
-const server = app.listen(3000, () => {
+const server = app.listen(4200, () => {
   const host = server.address().address;
   const port = server.address().port;
   console.log('Application running in http://%s:%s', host, port);

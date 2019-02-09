@@ -33,4 +33,4 @@ echo "Starting application"
 echo "===================================================="
 npm run start
 
-echo "App running in http://localhost:3000"
+echo "App running in http://localhost:4200"
