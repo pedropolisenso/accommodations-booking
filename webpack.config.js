@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'src/components/index.js'),
+  entry: path.join(__dirname, 'src/info/index.js'),
   output: {
     path: path.join(__dirname, 'public/assets/js'),
     publicPath: path.join(__dirname, '/js/'),
