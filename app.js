@@ -16,11 +16,11 @@ app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/', express.static(path.join(__dirname, '/api')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
-// Api Route
+// Public Route
 app.engine('html', es6Renderer);
-app.set('views', './api');
+app.set('views', './public');
 app.set('view engine', 'html');
 
 app.use('/', routes);

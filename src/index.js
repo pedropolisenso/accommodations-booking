@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export const Info = () => <h1>Info</h1>
+import App from './app';
+
+import './styles/main.sass';
 
 const app = document.getElementById('app');
-ReactDOM.render(<Info />, app);
+ReactDOM.render(<App />, app);
