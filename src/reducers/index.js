@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import Propeties from './propeties';
+import Properties from './properties';
 
-export default combineReducers({ Propeties });
+export default combineReducers({ Properties });

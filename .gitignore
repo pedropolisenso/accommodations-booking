@@ -1,3 +1,4 @@
 node_modules/
 data/
 package-lock.json
+public/assets/js/bundle.js

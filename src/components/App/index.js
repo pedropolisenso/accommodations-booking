@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MainList from '../MainList';
-import { getPropeties, createPropeties } from '../../actions/propeties';
+import { getProperties, createProperties } from '../../actions/properties';
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     if (this.props && this.props.dispatch) {
-      this.props.dispatch(getPropeties());
+      this.props.dispatch(getProperties());
     }
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
       units: units.split(',').map(item => item.replace(" ", "")).filter(item => item !== ""),
     }
 
-    this.props.dispatch(createPropeties(body));
+    this.props.dispatch(createProperties(body));
   }
 
   
@@ -53,7 +53,7 @@ class App extends Component {
   }
   
   render() {
-    const { Propeties, errorServer, dispatch } = this.props;
+    const { Properties, errorServer, dispatch } = this.props;
     const { errorField } = this.state;
 
     return (
@@ -69,8 +69,8 @@ class App extends Component {
           <button className="add" onClick={() => this.handleAdd()}>add properties</button>
         </div>
 
-        <h2>Propeties List</h2>
-        <MainList properties={Propeties.properties} dispatch={dispatch} />
+        <h2>Properties List</h2>
+        <MainList properties={Properties.properties} dispatch={dispatch} />
       </div>
     );
   }

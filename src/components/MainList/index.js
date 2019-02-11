@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemList from '../ItemList';
 
-import { deletePropeties } from '../../actions/propeties'
+import { deleteProperties } from '../../actions/properties'
 
 const MainList = ({properties, dispatch}) => {
   return (
@@ -13,7 +13,7 @@ const MainList = ({properties, dispatch}) => {
             <ItemList units={property.units} />
             <button
               className="delete-button"
-              onClick={() => dispatch(deletePropeties(property._id))}
+              onClick={() => dispatch(deleteProperties(property._id))}
             >
               DELETE
             </button>

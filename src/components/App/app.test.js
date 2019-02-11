@@ -8,16 +8,16 @@ import App from './index';
 configure({ adapter: new Adapter() });
 
 describe('<App />', () => {
-	let Propeties;
+	let Properties;
 
 	beforeEach(() => {
-		Propeties = {
+		Properties = {
 			properties: []
 		}
 	})
 
   it('Should renders the App component', () => {
-		const wrapper = shallow(<App Propeties={Propeties.properties} />);
+		const wrapper = shallow(<App Properties={Properties.properties} />);
 		
 		expect(wrapper.find('.accomodations')).to.have.lengthOf(1);
 		expect(wrapper.find('.form')).to.have.lengthOf(1);
@@ -26,7 +26,7 @@ describe('<App />', () => {
 	});
 
 	it('should show Warning message when fields are empty', () => {
-    const wrapper = shallow(<App Propeties={Propeties.properties} />);
+    const wrapper = shallow(<App Properties={Properties.properties} />);
 
     wrapper.setState({ errorFiled: false });
     wrapper.find('button').simulate('click');

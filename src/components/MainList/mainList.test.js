@@ -8,10 +8,10 @@ import MainList from './index';
 configure({ adapter: new Adapter() });
 
 describe('<MainList />', () => {
-	let Propeties;
+	let Properties;
 
 	beforeEach(() => {
-		Propeties = {
+		Properties = {
 			properties: [
         {
           _id: "5c608a2dd6675b50a7d505aa",
@@ -37,7 +37,7 @@ describe('<MainList />', () => {
 	})
 
   it('Should renders the MainList component', () => {
-		const wrapper = shallow(<MainList properties={Propeties.properties} />);
+		const wrapper = shallow(<MainList properties={Properties.properties} />);
 		
     expect(wrapper.find('.list')).to.have.lengthOf(1);
     expect(wrapper.find('.mainList')).to.have.lengthOf(2);

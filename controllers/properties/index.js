@@ -1,5 +1,13 @@
 const PropertiesModel = require('../../models/properties');
 
+const sortResult = (result) => {
+  return result.sort((a, b) => {
+    if(a.name < b.name) { return -1; }
+    if(a.name > b.name) { return 1; }
+    return 0;
+  })
+}
+
 class PropertiesController {
   constructor(Model) {
     this.Model = Model;
@@ -13,7 +21,7 @@ class PropertiesController {
   
   findAll(req, res) {
     this.Model.findAll((err, result) => {
-      res.json({ "properties": result });
+      res.json({ "properties": sortResult(result) });
     });	
   }
 
