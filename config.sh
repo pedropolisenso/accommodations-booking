@@ -18,6 +18,9 @@ echo "===================================================="
 sudo docker pull mongo
 
 mkdir data
+echo "===================================================="
+echo "Folder created :)"
+echo "===================================================="
 
 # Roda o container de mongo
 sudo docker run -p 27017:27017 -v $(pwd)/data:/data/db -d mongo 
