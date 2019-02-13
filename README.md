@@ -18,6 +18,21 @@ Accommodation Booking App
 
 > application running: `http://localhost:4200/`
 
+## Endpoints
+
+- POST
+- GET ALL
+- DELETE BY BODY
+```
+/api/v1/properties
+```
+
+- GET ONE
+- DELETE ONE
+```
+/api/v1/properties/:_id
+```
+
 ## Technologies
 - JavaScript ```ES6 or superior```
 - ReactJS ```version ^16.7.0```
