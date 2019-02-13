@@ -5,13 +5,15 @@ import {
   PROPERTIES_ERROR
 } from '../actions/types';
 
-const Properties = (state = {}, action) => {
+const Properties = (state = [], action) => {
   switch(action.type) {
     case GET_PROPERTIES_SUCCESS:
       if (state && state.errorServer) delete state.errorServer;
-      return Object.assign({}, state, action.payload)
+      return action.payload
     case CREATE_PROPERTIES_SUCCESS:
+      return state.concat(action.payload.data);
     case DELETE_PROPERTIES_SUCCESS:
+      return state.filter(item => item._id !== action.payload.id);
     case PROPERTIES_ERROR:
     default:
       return state;

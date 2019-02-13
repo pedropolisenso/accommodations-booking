@@ -23,33 +23,34 @@ export const createProperties = (body) => (dispatch) => {
 // DELETE
 export const deleteProperties = (id) => (dispatch) => {
   HTTP.delete(`/properties/${id}`,)
-    .then(() => dispatch(deletePropertiesSuccess()))
+    .then(() => dispatch(deletePropertiesSuccess(id)))
     .catch((error) => dispatch(propertiesError(error)));
 };
 
 // ACTION ERROR DEFAULT
 const getPropertiesSuccess = ({ properties }) => ({
   type: GET_PROPERTIES_SUCCESS,
-  payload: {
-    properties
-  }
+  payload: properties
 });
 
 const createPropertiesSuccess = (data) => ({
   type: CREATE_PROPERTIES_SUCCESS,
   payload: {
-    properties: data
+    data,
+    successCreated: true
   }
 });
 
-const deletePropertiesSuccess = () => ({
+const deletePropertiesSuccess = (id) => ({
   type: DELETE_PROPERTIES_SUCCESS,
+  payload: {
+    id,
+    successDeleted: true
+  }
 });
 
 
 const propertiesError = (errorServer) => ({
   type: PROPERTIES_ERROR,
-  payload: {
-    errorServer
-  }
+  payload: errorServe
 });

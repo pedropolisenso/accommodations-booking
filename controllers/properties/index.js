@@ -33,7 +33,7 @@ class PropertiesController {
       res.json({ "properties": result });
     });
   }
-  
+
   deleteOne({ params }, res) {
     this.Model.deleteOne(params._id, (err, result) => {
       res.json(result);

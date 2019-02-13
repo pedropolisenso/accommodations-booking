@@ -33,6 +33,8 @@ class App extends Component {
       return;
     }
 
+    this.setState({ errorField: false })
+
     const body = {
       name,
       units: units.split(',').map(item => item.replace(" ", "")).filter(item => item !== ""),
@@ -42,24 +44,30 @@ class App extends Component {
   }
 
   
-  feedbackMessages(errorField, errorServer) {
+  feedbackMessages({errorServer, successDeleted, successCreated}) {
+    const { errorField } = this.state;
+
     return (
       <div className="erros-feedbacks">
-        {errorField && <div className="alert alert-warning">Please, fill all fields correctly!</div>}
-        {errorServer && <div className="alert alert-danger">Oops! There was an error, try again!</div>}
-        {false && <div className="alert alert-success">Accomodations Added</div>}
+        {errorServer  &&
+          <div className="alert alert-danger">Oops! There was an error, try again!</div>}
+        {errorField &&
+          <div className="alert alert-warning">Please, fill all fields correctly!</div>}
+        {successCreated && !successDeleted &&
+          <div className="alert alert-success">Accomodations Added</div>}
+        {successDeleted && !successCreated &&
+          <div className="alert alert-success">Accomodations Deleted</div>}
       </div>
     )
   }
   
   render() {
-    const { Properties, errorServer, dispatch } = this.props;
-    const { errorField } = this.state;
+    const { Properties, dispatch, Feedbacks } = this.props;
 
     return (
       <div className="accomodations">
         <h2>Create new item</h2>
-        {this.feedbackMessages(errorField, errorServer)}
+        {this.feedbackMessages(Feedbacks)}
         <div className="form">
           <label>Name:</label>
           <input type="text" className="itemField name" onChange={this.handleChange('name')} />
@@ -70,7 +78,7 @@ class App extends Component {
         </div>
 
         <h2>Properties List</h2>
-        <MainList properties={Properties.properties} dispatch={dispatch} />
+        <MainList properties={Properties} dispatch={dispatch} />
       </div>
     );
   }
