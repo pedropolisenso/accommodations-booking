@@ -17,6 +17,8 @@ echo "Use password root to Docker configuration"
 echo "===================================================="
 sudo docker pull mongo
 
+mkdir data
+
 # Roda o container de mongo
 sudo docker run -p 27017:27017 -v $(pwd)/data:/data/db -d mongo 
 echo "===================================================="

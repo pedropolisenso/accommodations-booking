@@ -52,5 +52,5 @@ const deletePropertiesSuccess = (id) => ({
 
 const propertiesError = (errorServer) => ({
   type: PROPERTIES_ERROR,
-  payload: errorServe
+  payload: errorServer
 });
