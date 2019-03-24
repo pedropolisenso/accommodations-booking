@@ -1,5 +1,5 @@
 # accommodations-booking
-Accommodation Booking App
+MVP accommodation booking using simple technologies :)
 
 ## Dependences
 
@@ -15,6 +15,8 @@ Accommodation Booking App
 * 1 - clone  `cd git@github.com:pedropolisenso/accommodations-booking.git`
 * 2 - Enter in the folder `cd accommodations-booking`
 * 3 - Run `npm run config`
+
+* OBS: To test run `npm test`
 
 > application running: `http://localhost:4200/`
 
